@@ -2,3 +2,6 @@ pandas
 matplotlib
 seaborn
 statsmodels
+tensorflow
+arch
+statsmodels
