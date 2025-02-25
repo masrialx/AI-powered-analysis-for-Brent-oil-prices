@@ -24,7 +24,6 @@ plt.show()
 # Differencing for Stationarity
 df['Price_diff'] = df['Price'].diff().dropna()
 
-# ARIMA Model
 arima_model = ARIMA(df['Price'].dropna(), order=(2,1,2))
 arima_result = arima_model.fit()
 print(arima_result.summary())
