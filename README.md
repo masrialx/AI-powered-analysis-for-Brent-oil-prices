@@ -1,79 +1,132 @@
-# Brent Oil Price Analysis
+# Brent Oil Price Analysis & Interactive Dashboard
 
-## Overview
-This project analyzes how significant political, economic, and regulatory events impact **Brent crude oil prices** over time. Using **time series analysis** and **machine learning models**, we identify trends and correlations to support **investors, policymakers, and energy companies** in decision-making.
+Welcome to the **Brent Oil Price Analysis** project by Birhan Energies! This repository contains the code, analysis, and tools to explore how major events—like political decisions, conflicts, sanctions, and OPEC policies—impact Brent oil prices. Our mission? To deliver actionable insights for investors, policymakers, and energy companies tackling the ups and downs of the oil market.
 
-## Business Objective
-The primary goal is to study how **major events** (e.g., political decisions, conflicts, OPEC policy changes, sanctions) influence Brent oil prices. The insights help in:
-- **Investment Strategies**: Helping investors anticipate price movements.
-- **Policy Development**: Assisting policymakers in economic stability planning.
-- **Operational Planning**: Enabling energy companies to forecast price fluctuations.
+## Project Overview
 
-## Data Description
-The dataset consists of **daily Brent oil prices** from **May 20, 1987, to September 30, 2022**.
+At Birhan Energies, we turn messy data into smart strategies. This project dives into historical Brent oil prices (1987–2022) and uncovers how global events drive price changes. We’ve got statistical models, exploratory analysis, and plans for a slick interactive dashboard to make sense of it all.
 
-### Data Fields:
-- **Date**: The date of the recorded oil price (`day-month-year` format).
-- **Price**: The price of Brent crude oil in **USD per barrel**.
+### What’s the Goal?
+- **Analyze**: Link key events (political, economic, regulatory) to Brent oil price fluctuations.
+- **Measure**: Quantify how much these events shake up prices.
+- **Guide**: Provide clear insights for investment, policy, and operational decisions.
 
-## Project Tasks
-### **Task 1: Defining the Data Analysis Workflow**
-- Understand the dataset and how it's generated.
-- Identify key assumptions and limitations.
-- Select statistical models for time series analysis.
-- Determine communication channels for results.
+### Why It Matters
+Oil prices are a rollercoaster. Investors need help managing risks, policymakers need data for stability, and energy companies need forecasts to keep operations humming. We’re here to light the way!
 
-### **Task 2: Analyzing Brent Oil Prices**
-- Use **ARIMA, GARCH**, and machine learning models (**LSTM, VAR**).
-- Study external factors like GDP, inflation, trade policies, and technology.
-- Validate models with historical data and predictive performance metrics.
+---
 
-### **Task 3: Interactive Dashboard Development**
-- **Backend**: Flask API to serve analysis results.
-- **Frontend**: React dashboard with interactive visualizations.
-- **Key Features**: Historical trends, event-driven price changes, and forecast insights.
+## What’s Inside?
 
-## Tech Stack
-- **Python** (pandas, NumPy, matplotlib, statsmodels, PyMC3)
-- **Machine Learning** (ARIMA, GARCH, LSTM, VAR)
-- **Flask** (Backend API)
-- **React** (Frontend Dashboard)
-- **Git & GitHub** (Version Control)
+### 1. Data
+- **Dataset**: Historical Brent oil prices (daily, May 20, 1987 – September 30, 2022)
+- **Fields**:
+  - `Date`: Day-month-year (e.g., 20-May-87)
+  - `Price`: USD per barrel
+- **Future Additions**: Economic indicators, tech advancements, political events (from sources like World Bank, IMF, IEA).
 
-## Installation & Setup
-### **1. Clone the Repository**
-```bash
-git clone https://github.com/your-username/brent-oil-analysis.git
-cd brent-oil-analysis
+### 2. Analysis Workflow
+We’re breaking this into three tasks:
+
+#### Task 1: Define the Workflow
+- Planned the steps: data cleaning, exploratory analysis, and modeling.
+- Explored time series models (ARIMA, GARCH) and Bayesian tools (PyMC3).
+- Set assumptions and thought about how to share findings with stakeholders.
+
+#### Task 2: Analyze Brent Oil Prices
+- Built models to spot trends and event impacts:
+  - **Time Series**: ARIMA, GARCH, VAR, Markov-Switching ARIMA
+  - **Machine Learning**: LSTM for deeper patterns
+- Considered factors like:
+  - Economic indicators (GDP, inflation, USD rates)
+  - Tech changes (fracking, renewables)
+  - Political moves (sanctions, regulations)
+- Validated with metrics like RMSE, MAE, and R².
+
+#### Task 3: Build an Interactive Dashboard
+- **Backend**: Flask APIs to serve data and results.
+- **Frontend**: React interface with interactive charts (planned).
+- **Features** (in progress):
+  - Show price trends, forecasts, and event correlations.
+  - Add filters for dates, events, and metrics.
+
+---
+
+## Folder Structure
+Here’s how the project is organized:
+
+```
+AI-powered-analysis-for-Brent-oil-prices/
+├── app.py              # Main Flask application (backend entry point)
+├── notebooks/          # Jupyter notebooks for exploratory analysis
+├── README.md          # You’re reading it!
+├── requirements.txt    # Python dependencies
+├── scripts/            # Additional scripts for data processing or utilities
+├── src/                # Core source code
+│   ├── brent-oil-analysis.py   # Main analysis script (Task 1 & 2)
+│   ├── brent-oil-analysis2.py  # Alternative or extended analysis script
+│   └── __init__.py             # Makes src a Python package
+├── tests/              # Unit tests (if any)
 ```
 
-### **2. Create a Virtual Environment**
-```bash
-python -m venv env
-source env/bin/activate  # On Windows: env\Scripts\activate
-```
+---
 
-### **3. Install Dependencies**
-```bash
-pip install -r requirements.txt
-```
+## Getting Started
 
-### **4. Run the Analysis**
-```bash
-python analysis.py
-```
+### Prerequisites
+- **Python 3.8+**: For analysis and backend.
+- **TensorFlow Environment**: Looks like you’re using a `tf_env`—great for ML models!
+- **Git**: To clone this repo.
 
-### **5. Start the Dashboard**
-```bash
-cd dashboard
-npm install
-npm start
-```
+### Installation
+1. **Clone the Repository**:
+   ```bash
+   git clone https://github.com/your-username/AI-powered-analysis-for-Brent-oil-prices.git
+   cd AI-powered-analysis-for-Brent-oil-prices
+   ```
 
-## Contribution Guidelines
-1. **Fork the Repository**
-2. **Create a Feature Branch** (`git checkout -b feature-branch`)
-3. **Commit Changes** (`git commit -m "Added new analysis method"`)
-4. **Push to GitHub** (`git push origin feature-branch`)
-5. **Open a Pull Request**
+2. **Set Up the Python Environment**:
+   If using your `tf_env`:
+   ```bash
+   source ~/path-to-tf_env/bin/activate  # Activate your TensorFlow env
+   pip install -r requirements.txt
+   ```
+
+3. **Run the Analysis**:
+   ```bash
+   cd src
+   python brent-oil-analysis.py
+   ```
+   Check out `brent-oil-analysis2.py` for alternative approaches!
+
+4. **Start the Flask App** (if ready):
+   ```bash
+   python app.py
+   ```
+
+---
+
+## How to Use It
+
+1. **Explore the Notebooks**: Head to `/notebooks` for EDA and early findings.
+2. **Run the Analysis**: Use `/src/brent-oil-analysis.py` to dig into the data—modify it as you see fit!
+3. **Check the Backend**: `app.py` is your Flask hub—run it to test API endpoints (if implemented).
+4. **Add Your Touch**: Drop new scripts in `/scripts` or tests in `/tests`.
+
+---
+
+## Next Steps
+- **Data**: Add external datasets (economic, political) to `src` or `notebooks`.
+- **Models**: Expand `brent-oil-analysis.py` with VAR, LSTM, or Bayesian methods.
+- **Dashboard**: Build out the React frontend—stay tuned for updates!
+
+---
+
+## Contributing
+Got ideas? Fork this repo, make your changes, and submit a pull request. Let’s make this project even better together!
+
+## Contact
+Questions? Reach out to the Birhan Energies team (or your GitHub handle: @your-username).
+
+Happy analyzing! 🚀
 
