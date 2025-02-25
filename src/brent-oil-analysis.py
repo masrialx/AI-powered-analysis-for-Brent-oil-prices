@@ -69,7 +69,6 @@ def main():
     # Perform ADF Test
     adf_test(df.iloc[:, 0])
     
-    # Plot ACF and PACF
     plot_acf_pacf(df.iloc[:, 0])
     
 if __name__ == "__main__":
